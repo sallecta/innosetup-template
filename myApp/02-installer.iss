@@ -8,7 +8,7 @@
 #define myVer2 ReadIni(installerINIfile, 'version', 'version2','error');
 #define myVer3 ReadIni(installerINIfile, 'version', 'version3','error');
 #define myVerFull myVer1 + "." + myVer2 + "." + myVer3;
-#if Pos(myVer1, 'error') > 0
+#if Pos('error', myVer1) > 0
 	#pragma warning 'Error parsing "' + installerINIfile + '"; (' + 'myVerFull: ' + myVerFull + ')';
 	#error Error parsing "{#installerINIfile}". Compilation aborted. See log for details.
 #endif
